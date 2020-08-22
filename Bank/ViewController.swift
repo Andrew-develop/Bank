@@ -16,6 +16,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func exchangerates(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+        let vc = storyboard?.instantiateViewController(identifier: "table") as! UITableViewController
+        self.present(vc, animated: true)
+    }
+    
     func addBackgroundImage() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "background")
