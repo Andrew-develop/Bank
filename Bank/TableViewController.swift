@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class TableViewController: UITableViewController {
+    
+    let currencyData = ["EUR","USD","JEP","GBP","IMP","CNY","BAM","AUD","NZD","JOD","CHF","BGN","KWD","MYR","XAU"]
+    
+    var currencyValueToday : JSON = []
+    var currencyValueYesterday : JSON = []
+    var currencyMean : JSON = []
+    
+    var yesterdayDate = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        dateToString()
+        
+        //todayInfo()
+        //yesterdayInfo()
+        //meanInfo()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,23 +40,71 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return currencyData.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Header", for: indexPath)
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "regularCell", for: indexPath)
+            return cell
+        }
     }
-    */
+    
+    func yesterdayInfo() {
+        AF.request("http://data.fixer.io/api/\(yesterdayDate)?access_key=eb10647117f5075162ee60ec9b2a3fb1").responseJSON {
+            responceJSON in
+            switch responceJSON.result {
+            case .success(let value):
+                print("Success got the yesterday value")
+                self.currencyValueYesterday = JSON(responceJSON.value)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func todayInfo() {
+        AF.request("http://data.fixer.io/api/latest?access_key=eb10647117f5075162ee60ec9b2a3fb1").responseJSON {
+            responceJSON in
+            switch responceJSON.result {
+            case .success(let value):
+                print("Success got the today value")
+                self.currencyValueToday = JSON(responceJSON.value)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func meanInfo() {
+        AF.request("http://data.fixer.io/api/symbols?access_key=eb10647117f5075162ee60ec9b2a3fb1").responseJSON {
+            responceJSON in
+            switch responceJSON.result {
+            case .success(let value):
+                print("Success got the mean value")
+                self.currencyMean = JSON(responceJSON.value)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func dateToString() {
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        yesterdayDate = dateFormatter.string(from: yesterday!)
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
