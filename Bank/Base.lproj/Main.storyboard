@@ -124,6 +124,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="dateFromButton" destination="Iws-rY-2QT" id="SSf-kc-lff"/>
+                        <outlet property="eurFromButton" destination="569-IK-kyg" id="wir-J3-wd7"/>
+                        <outlet property="usdFromButton" destination="S50-R1-pFz" id="Pn8-ZM-SmE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

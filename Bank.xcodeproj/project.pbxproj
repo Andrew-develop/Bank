@@ -14,9 +14,13 @@
 		87C2B4D924F00CD90065337C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C2B4D724F00CD90065337C /* Main.storyboard */; };
 		87C2B4DB24F00CD90065337C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C2B4DA24F00CD90065337C /* Assets.xcassets */; };
 		87C2B4DE24F00CD90065337C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C2B4DC24F00CD90065337C /* LaunchScreen.storyboard */; };
+		E44EF97F427165D6B3EC772C /* Pods_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3997CC18380BAB59053765D9 /* Pods_Bank.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3997CC18380BAB59053765D9 /* Pods_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4809F06245E09247AB9C83A8 /* Pods-Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank.debug.xcconfig"; path = "Target Support Files/Pods-Bank/Pods-Bank.debug.xcconfig"; sourceTree = "<group>"; };
+		569EBBF71345B93EC88AD3AF /* Pods-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank.release.xcconfig"; path = "Target Support Files/Pods-Bank/Pods-Bank.release.xcconfig"; sourceTree = "<group>"; };
 		877E43DD24F13E1B00F8CCF5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		87C2B4CE24F00CD90065337C /* Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C2B4D124F00CD90065337C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E44EF97F427165D6B3EC772C /* Pods_Bank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				87C2B4D024F00CD90065337C /* Bank */,
 				87C2B4CF24F00CD90065337C /* Products */,
+				E0E5DC0B6CF4F0A85E586662 /* Pods */,
+				BE74C2542675B9EAD88C4B8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,24 @@
 			path = Bank;
 			sourceTree = "<group>";
 		};
+		BE74C2542675B9EAD88C4B8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3997CC18380BAB59053765D9 /* Pods_Bank.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0E5DC0B6CF4F0A85E586662 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4809F06245E09247AB9C83A8 /* Pods-Bank.debug.xcconfig */,
+				569EBBF71345B93EC88AD3AF /* Pods-Bank.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87C2B4E224F00CD90065337C /* Build configuration list for PBXNativeTarget "Bank" */;
 			buildPhases = (
+				F2B1592AA1190BA44337A8FB /* [CP] Check Pods Manifest.lock */,
 				87C2B4CA24F00CD90065337C /* Sources */,
 				87C2B4CB24F00CD90065337C /* Frameworks */,
 				87C2B4CC24F00CD90065337C /* Resources */,
+				F7C7F0FC8A3B62C6FDA9EFA5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F2B1592AA1190BA44337A8FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7C7F0FC8A3B62C6FDA9EFA5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bank/Pods-Bank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bank/Pods-Bank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bank/Pods-Bank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		87C2B4CA24F00CD90065337C /* Sources */ = {
@@ -286,6 +355,7 @@
 		};
 		87C2B4E324F00CD90065337C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4809F06245E09247AB9C83A8 /* Pods-Bank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +374,7 @@
 		};
 		87C2B4E424F00CD90065337C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 569EBBF71345B93EC88AD3AF /* Pods-Bank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
