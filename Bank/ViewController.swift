@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     @IBAction func exchangerates(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
-        let vc = storyboard?.instantiateViewController(identifier: "table") as! UITableViewController
+        let vc = storyboard?.instantiateViewController(identifier: "table") as! UIViewController
         self.present(vc, animated: true)
     }
     
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         usdFromRub = roundDown(usdFromRub, toNearest: 0.01)
         eurFromButton.text = "EUR \(eur!)"
         usdFromButton.text = "USD \(usdFromRub)"
-        dateFromButton.text = "Date \(json["date"])"
+        dateFromButton.text = "\(json["date"])"
     }
     
     func roundDown(_ value: Double, toNearest: Double) -> Double {

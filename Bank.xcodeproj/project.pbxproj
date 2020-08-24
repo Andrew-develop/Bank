@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		877E43DE24F13E1B00F8CCF5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877E43DD24F13E1B00F8CCF5 /* TableViewController.swift */; };
+		87985A3624F3BA2A005FA252 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87985A3524F3BA2A005FA252 /* CurrencyViewController.swift */; };
+		87985A3824F3BD35005FA252 /* RegularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87985A3724F3BD35005FA252 /* RegularTableViewCell.swift */; };
 		87C2B4D224F00CD90065337C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C2B4D124F00CD90065337C /* AppDelegate.swift */; };
 		87C2B4D424F00CD90065337C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C2B4D324F00CD90065337C /* SceneDelegate.swift */; };
 		87C2B4D624F00CD90065337C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C2B4D524F00CD90065337C /* ViewController.swift */; };
@@ -21,7 +22,8 @@
 		3997CC18380BAB59053765D9 /* Pods_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4809F06245E09247AB9C83A8 /* Pods-Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank.debug.xcconfig"; path = "Target Support Files/Pods-Bank/Pods-Bank.debug.xcconfig"; sourceTree = "<group>"; };
 		569EBBF71345B93EC88AD3AF /* Pods-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank.release.xcconfig"; path = "Target Support Files/Pods-Bank/Pods-Bank.release.xcconfig"; sourceTree = "<group>"; };
-		877E43DD24F13E1B00F8CCF5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		87985A3524F3BA2A005FA252 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		87985A3724F3BD35005FA252 /* RegularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTableViewCell.swift; sourceTree = "<group>"; };
 		87C2B4CE24F00CD90065337C /* Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C2B4D124F00CD90065337C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C2B4D324F00CD90065337C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +70,8 @@
 				87C2B4D124F00CD90065337C /* AppDelegate.swift */,
 				87C2B4D324F00CD90065337C /* SceneDelegate.swift */,
 				87C2B4D524F00CD90065337C /* ViewController.swift */,
-				877E43DD24F13E1B00F8CCF5 /* TableViewController.swift */,
+				87985A3524F3BA2A005FA252 /* CurrencyViewController.swift */,
+				87985A3724F3BD35005FA252 /* RegularTableViewCell.swift */,
 				87C2B4D724F00CD90065337C /* Main.storyboard */,
 				87C2B4DA24F00CD90065337C /* Assets.xcassets */,
 				87C2B4DC24F00CD90065337C /* LaunchScreen.storyboard */,
@@ -91,7 +94,6 @@
 				4809F06245E09247AB9C83A8 /* Pods-Bank.debug.xcconfig */,
 				569EBBF71345B93EC88AD3AF /* Pods-Bank.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,10 +212,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				877E43DE24F13E1B00F8CCF5 /* TableViewController.swift in Sources */,
 				87C2B4D624F00CD90065337C /* ViewController.swift in Sources */,
+				87985A3824F3BD35005FA252 /* RegularTableViewCell.swift in Sources */,
 				87C2B4D224F00CD90065337C /* AppDelegate.swift in Sources */,
 				87C2B4D424F00CD90065337C /* SceneDelegate.swift in Sources */,
+				87985A3624F3BA2A005FA252 /* CurrencyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
