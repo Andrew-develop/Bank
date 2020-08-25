@@ -46,7 +46,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="exchangerates:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VTc-Ee-qPL"/>
+                                    <segue destination="Nv3-Xg-vnT" kind="show" identifier="toCurrencyViewController" id="Q4o-QH-sQD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5S-rk-QHv">
@@ -158,28 +158,28 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="COD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eo1-yP-iQU">
-                                                    <rect key="frame" x="48" y="4" width="38" height="17"/>
+                                                    <rect key="frame" x="48" y="4" width="44" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currency type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Jf-dr-BHy">
-                                                    <rect key="frame" x="16" y="32" width="106" height="10"/>
+                                                    <rect key="frame" x="16" y="32" width="177" height="10"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
                                                     <color key="textColor" red="0.10980392160000001" green="0.25882352939999997" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymc-Ka-Kp4">
-                                                    <rect key="frame" x="192" y="18" width="30" height="10"/>
+                                                    <rect key="frame" x="181" y="18" width="41" height="10"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
                                                     <color key="textColor" red="0.10980392160000001" green="0.25882352939999997" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4t-my-c8O">
-                                                    <rect key="frame" x="364" y="18" width="30" height="10"/>
+                                                    <rect key="frame" x="356" y="18" width="38" height="10"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
                                                     <color key="textColor" red="0.10980392160000001" green="0.25882352939999997" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -215,7 +215,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="38"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSh-Wk-4PA">
-                                        <rect key="frame" x="16" y="10" width="26" height="15"/>
+                                        <rect key="frame" x="16" y="10" width="76" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -247,16 +247,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="h9F-kh-eEl" firstAttribute="top" secondItem="SMT-Nj-mRa" secondAttribute="top" id="0IK-cl-9h6"/>
                             <constraint firstItem="8gF-4s-hcl" firstAttribute="trailing" secondItem="SMT-Nj-mRa" secondAttribute="trailing" id="20o-ph-NbP"/>
-                            <constraint firstItem="h9F-kh-eEl" firstAttribute="trailing" secondItem="SMT-Nj-mRa" secondAttribute="trailing" id="DBS-vh-tAB"/>
-                            <constraint firstItem="h9F-kh-eEl" firstAttribute="top" secondItem="SMT-Nj-mRa" secondAttribute="top" id="DNK-l4-OWg"/>
                             <constraint firstItem="8gF-4s-hcl" firstAttribute="leading" secondItem="SMT-Nj-mRa" secondAttribute="leading" id="PXP-Rw-1cO"/>
                             <constraint firstAttribute="bottom" secondItem="8gF-4s-hcl" secondAttribute="bottom" id="Wyp-fD-iV4"/>
+                            <constraint firstItem="h9F-kh-eEl" firstAttribute="leading" secondItem="SMT-Nj-mRa" secondAttribute="leading" id="fye-Gt-7sV"/>
                             <constraint firstItem="8gF-4s-hcl" firstAttribute="top" secondItem="h9F-kh-eEl" secondAttribute="bottom" id="xGr-3c-ZkI"/>
-                            <constraint firstItem="h9F-kh-eEl" firstAttribute="leading" secondItem="SMT-Nj-mRa" secondAttribute="leading" id="yMF-HE-rcW"/>
+                            <constraint firstItem="h9F-kh-eEl" firstAttribute="trailing" secondItem="SMT-Nj-mRa" secondAttribute="trailing" id="zJl-BV-vRc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SMT-Nj-mRa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LM6-y8-kyz"/>
                     <connections>
                         <outlet property="currencyTable" destination="8gF-4s-hcl" id="4p8-dc-JIA"/>
                         <outlet property="date" destination="qSh-Wk-4PA" id="RTl-ku-Clf"/>
@@ -264,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLo-13-5tL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="98"/>
+            <point key="canvasLocation" x="844.92753623188412" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>
