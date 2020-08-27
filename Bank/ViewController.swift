@@ -12,6 +12,16 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     
+    struct JSONResponse: Decodable {
+        var rates: CurrencyName?
+        var date: String
+    }
+    
+    struct CurrencyName: Decodable {
+        var RUB: Double
+        var USD: Double
+    }
+    
     @IBOutlet weak var dateFromButton: UILabel!
     @IBOutlet weak var usdFromButton: UILabel!
     @IBOutlet weak var eurFromButton: UILabel!
@@ -50,29 +60,29 @@ class ViewController: UIViewController {
     }
     
     func informationFromCurrencyButton() {
-        AF.request("http://data.fixer.io/api/latest?access_key=eb10647117f5075162ee60ec9b2a3fb1&symbols=RUB,USD").responseJSON {
-            responceJSON in
-            switch responceJSON.result {
-            case .success(let value):
-                print("Success got the currency value")
-                let currencyValueJSON : JSON = JSON(responceJSON.value)
-                self.updateinformationFromCurrencyButton(json: currencyValueJSON)
-            case .failure(let error):
-                print(error)
+        AF.request("http://data.fixer.io/api/latest?access_key=eb10647117f5075162ee60ec9b2a3fb1").responseJSON {
+            responseJSON in
+            guard let data = responseJSON.data else {return}
+            do {
+                let jsonResponse = try JSONDecoder().decode(JSONResponse.self, from: data)
+                self.updateInformationFromCurrencyButton(json: jsonResponse)
+            }
+            catch {
+                print("error decoding \(error)")
             }
         }
     }
     
-    func updateinformationFromCurrencyButton(json : JSON) {
-        var eur = json["rates"]["RUB"].doubleValue
-        var usd = json["rates"]["USD"].doubleValue
+    func updateInformationFromCurrencyButton(json: ViewController.JSONResponse) {
+        var eur : Double = json.rates!.RUB
+        var usd : Double = json.rates!.USD
         usd = roundDown(usd, toNearest: 0.01)
         eur = roundDown(eur, toNearest: 0.01)
         var usdFromRub = eur / usd
         usdFromRub = roundDown(usdFromRub, toNearest: 0.01)
         eurFromButton.text = "EUR \(eur)"
         usdFromButton.text = "USD \(usdFromRub)"
-        dateFromButton.text = "\(json["date"])"
+        dateFromButton.text = json.date
     }
     
     func roundDown(_ value: Double, toNearest: Double) -> Double {
